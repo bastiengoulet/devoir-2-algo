@@ -1,0 +1,5 @@
+# Dossier de dépendances
+node_modules/
+
+# Dossier cache de npm
+.npm
