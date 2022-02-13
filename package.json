@@ -1,19 +1,19 @@
 {
-  "name": "inf21307-devoir-2",
-  "version": "1.0.0",
-  "description": "Le devoir #2 du cours de Structures de données et algorithmes (INF21307) demandant des fonctions de conversion entre les codes de caractères UTF-8 et UTF-32.",
-  "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bastiengoulet/devoir-2-algo.git"
-  },
-  "author": "Bastien Goulet et Pieric Husson",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bastiengoulet/devoir-2-algo/issues"
-  },
-  "homepage": "https://github.com/bastiengoulet/devoir-2-algo#readme"
+    "name": "inf21307-devoir-2",
+    "version": "1.0.0",
+    "description": "Le devoir #2 du cours de Structures de données et algorithmes (INF21307) demandant des fonctions de conversion entre les codes de caractères UTF-8 et UTF-32.",
+    "main": "index.js",
+    "scripts": {
+        "test": "test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bastiengoulet/devoir-2-algo.git"
+    },
+    "author": "Bastien Goulet et Pieric Husson",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/bastiengoulet/devoir-2-algo/issues"
+    },
+    "homepage": "https://github.com/bastiengoulet/devoir-2-algo#readme"
 }
