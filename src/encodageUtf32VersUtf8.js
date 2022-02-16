@@ -1,7 +1,35 @@
+const fs = require('fs');
 const constants = require("./constants.js");
 const shared = require("./shared.js");
 
-module.exports.convertirUnicode32VersUtf8 = unicode32Char =>
+module.exports.convertirUnicode32VersUtf8 = (fichierSource, fichierDest) =>
+{
+    fs.open(fichierSource, "r", (erreur, fd) => 
+    {
+        if (erreur) {
+            console.log(erreur);
+            return;
+        }
+
+        var unicode32Char = Buffer.alloc(4);
+        var buffer = Buffer.alloc(0);
+
+        while (fs.readSync(fd, unicode32Char, 0, 4, null) != 0)
+        {   
+            let utf8Char = this.convertirCharUnicode32VersUtf8(unicode32Char);
+            buffer = Buffer.concat([buffer, utf8Char]);
+        }
+
+        fs.writeFile(fichierDest, buffer, { flag: "w" }, erreur => {
+            if (erreur) {
+                console.log(erreur);
+                return;
+            }
+        })
+    });
+}
+
+module.exports.convertirCharUnicode32VersUtf8 = unicode32Char =>
 {
     var utf8Char = [];
 
@@ -35,7 +63,7 @@ module.exports.convertirUnicode32VersUtf8 = unicode32Char =>
         utf8Char.push(shared.charInvalide());
     }
 
-    return utf8Char;
+    return Buffer.from(utf8Char);
 }
 
 const encoderUtf8 = (code, nbOctetsSupp, miseAZero, header) =>
