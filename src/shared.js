@@ -7,6 +7,11 @@ module.exports.charInvalide = () =>
     return constants.CODE_POINT_INTERROGATION;
 }
 
+module.exports.isUtf8 = utf8Char => 
+{
+    return Buffer.isBuffer(utf8Char) && utf8Char.length == constants.NOMBRE_OCTETS_UTF_8;
+}
+
 module.exports.isUnicode32 = unicode32Char =>
 {
     return Buffer.isBuffer(unicode32Char) && unicode32Char.length == constants.NOMBRE_OCTETS_UNICODE_32;
@@ -17,7 +22,6 @@ module.exports.readInt32LE = unicode32Char =>
     if (!this.isUnicode32(unicode32Char)) {
         return 0;
     }
-
     return ((unicode32Char[3] << 24) | ((unicode32Char[2] << 16) | ((unicode32Char[1] << 8) | unicode32Char[0])))
 }
 

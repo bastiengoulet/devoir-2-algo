@@ -32,7 +32,6 @@ module.exports.convertirUnicode32VersUtf8 = (fichierSource, fichierDest) =>
 module.exports.convertirCharUnicode32VersUtf8 = unicode32Char =>
 {
     var utf8Char = [];
-
     if (shared.isUnicode32(unicode32Char)) 
     {
         var codeChar = shared.readInt32LE(unicode32Char);
@@ -61,8 +60,8 @@ module.exports.convertirCharUnicode32VersUtf8 = unicode32Char =>
     else 
     {
         utf8Char.push(shared.charInvalide());
+        console.log("?");
     }
-
     return Buffer.from(utf8Char);
 }
 
